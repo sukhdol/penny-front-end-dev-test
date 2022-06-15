@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderService } from './loader.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title: string = 'PENNY FE DEV TEST';
-  loading: boolean = false;
+
+  constructor(public loader: LoaderService) {
+  }
 
   ngOnInit() {
-    this.loading = true;
-    setTimeout(() => (this.loading = false), this.randomInt(4, 8) * 1000);
+    this.loader.start();
+    setTimeout(() => (this.loader.finish()), this.randomInt(4, 8) * 1000);
   }
 
   randomInt(min: number, max: number) {

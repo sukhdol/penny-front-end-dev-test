@@ -8,7 +8,7 @@
     <p>
       The purpose of this is to test your Javascript, Angular, CSS and
       creativity; We have left this intentionally vague to allow you to
-      demostrate to us how you would accomplish this in an authentic setting.
+      demonstrate to us how you would accomplish this in an authentic setting.
       <strong>There are no wrong answers.</strong>
     </p>
     <p>
@@ -18,5 +18,7 @@
       component.
     </p>
   </div>
-  <div class="component__content">Your Component Here!</div>
+  <div class="component__content">
+    <app-spinner *ngIf="loader.isLoading$ | async"></app-spinner>
+  </div>
 </div>
